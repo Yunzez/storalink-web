@@ -17,9 +17,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
-        <meta property="og:image" content="opengraph-image.png" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
+        <meta name='title' property="og:title" content= "Storalink" />
+        <meta name='image' property="og:image" content= "https://i.postimg.cc/tgxcR3ts/metaimg.png" />
+        <meta name='type' property="og:type" content='website' />
+        <meta name='description' property="og:description" content= "Store, sort, and share an assortment of links in a smart way!" />
+        <meta name='url' property="og:url" content= "www.storalink.com" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="" />
+        <meta name="twitter:title" content="Storalink" />
+        <meta name="twitter:description" content="Store, sort, and share an assortment of links in a smart way!" />
+        <meta name="twitter:image" content="https://i.postimg.cc/tgxcR3ts/metaimg.png" />
       </Head>
 
       <GlobalContextProvider>
