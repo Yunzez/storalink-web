@@ -1,23 +1,26 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
+import "./globals.css";
+import { Inter } from "next/font/google";
 import { GlobalContextProvider } from "../context/GlobalProvider";
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: 'Storalink',
-  description: 'Store, sort, and share an assortment of links in a smart way!',
-}
+  title: "Storalink",
+  description: "Store, sort, and share an assortment of links in a smart way!",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
+      <meta property="og:image" content="opengraph-image.png" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <GlobalContextProvider>
-      <body className={inter.className}>{children}</body>
+        <body className={inter.className}>{children}</body>
       </GlobalContextProvider>
     </html>
-  )
+  );
 }
