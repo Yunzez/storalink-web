@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { GlobalContextProvider } from "../context/GlobalProvider";
+import Head from "next/head";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -15,9 +16,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <meta property="og:image" content="opengraph-image.png" />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
+      <Head>
+        <meta property="og:image" content="opengraph-image.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+      </Head>
+
       <GlobalContextProvider>
         <body className={inter.className}>{children}</body>
       </GlobalContextProvider>
