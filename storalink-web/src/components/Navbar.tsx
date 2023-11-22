@@ -6,8 +6,8 @@ import theme from "@/app/theme";
 import { useRouter } from "next/navigation";
 import { gsap } from "gsap";
 import Storalink_name from "../../public/Storalink_name.svg";
-import Menu_close from "../../public/Menu_close.svg";
-import Menu_open from "../../public/Menu_open.svg";
+import Menu_close from "../../public/menu_close.svg";
+import Menu_open from "../../public/menu_open.svg";
 import Image from "next/image";
 
 const NavbarContainer = styled.div`
