@@ -10,20 +10,21 @@ import Banner from "@/components/Banner";
 import KeyFeatures from "@/components/KeyFeatures";
 // import { MainContentWrapper } from "./layout";
 
-
 export const MainContentWrapper = styled.div`
   padding-left: 5%;
   padding-right: 5%;
   margin-top: 8vh;
+  @media (max-width: 768px) {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
 `;
 
 export default function Home() {
   return (
     <>
-      <MainContentWrapper>
-        <Banner />
-        <KeyFeatures />
-      </MainContentWrapper>
+      <Banner />
+      <KeyFeatures />
     </>
   );
 }

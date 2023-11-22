@@ -26,10 +26,10 @@ const DemoButton = styled.div`
 function Banner() {
   return (
     <div className="py-5">
-      <p className="font-bold text-4xl mx-10 my-5">
+      <p className="font-bold text-4xl px-5 md:px-40 my-5 text-center">
         Store, sort, and share an assortment of links in a smart way!
       </p>
-      <p className="text-sm py-5 px-20" style={{ color: theme.themeGrey }}>
+      <p className="text-sm py-5 px-2 md:px-20 text-center" style={{ color: theme.themeGrey }}>
         Storalink facilitates a more connected society by allowing
         internet-savvy people to share linked resources. We can’t wait to see
         what your contributions would be to the internet!

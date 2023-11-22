@@ -15,10 +15,13 @@ const FeatureDivHeight = 600;
 const FeatureSection = styled.div`
   flex-direction: row;
   margin-top: 5vh;
-  height: 65vh;
+  min-height: 65vh;
   width: 100%;
   position: relative;
   background-color: ${theme.themeWhite};
+  @media (max-width: 768px) {
+    min-height: 90vh;
+  }
 `;
 
 const bubble1Animation = keyframes`
@@ -53,6 +56,7 @@ const Bubble1 = styled.div<BubbleProps>`
   animation: ${bubble1Animation} 15s linear infinite;
   top: ${(props) => props.top};
   left: ${(props) => props.left};
+  z-index: 1;
 `;
 
 const Bubble2 = styled.div<BubbleProps>`
@@ -65,13 +69,14 @@ const Bubble2 = styled.div<BubbleProps>`
   animation: ${bubble2Animation} 15s linear infinite;
   top: ${(props) => props.top};
   left: ${(props) => props.left};
+  z-index: 1;
 `;
 
 function KeyFeatures() {
   return (
     <div className="w-full">
       <div className="flex justify-center">
-        <div className="w-3/5">
+        <div className="md:w-3/5 w-screen px-5 md:px-0">
           <p className="font-semibold text-center mb-3">Key Features</p>
           <p className="font-bold text-xl text-center mb-3">
             Here is what you can do with your links!
@@ -85,8 +90,8 @@ function KeyFeatures() {
         </div>
       </div>
 
-      <FeatureSection>
-        <div className="grid grid-cols-2 gap-4 ">
+      <FeatureSection >
+        <div className="md:grid md:grid-cols-2 md:gap-4 md:flex-row  flex flex-col-reverse">
           <div className="col-span-1 flex justify-center place-items-center items-center">
             <div style={{ width: "80%" }}>
               <Image
@@ -123,8 +128,8 @@ function KeyFeatures() {
         </div>
       </FeatureSection>
 
-      <FeatureSection>
-        <div className="grid grid-cols-2 gap-4 px-10">
+      <FeatureSection >
+        <div className="md:grid md:grid-cols-2 md:gap-4 md:flex-row flex flex-col">
           <div className="col-span-1 relative flex justify-center">
             <Bubble2 top="20%" left="75%" />
             <Bubble1 top="60%" left="5%" />
@@ -139,7 +144,7 @@ function KeyFeatures() {
             />
           </div>
           <div className="col-span-1 flex justify-center place-items-center">
-            <div style={{ width: "80%" }}>
+            <div className="w-4/5">
               <Image
                 src={link_internal_header}
                 alt="Add Links Externally"
@@ -163,9 +168,9 @@ function KeyFeatures() {
       </FeatureSection>
 
       <FeatureSection>
-        <div className="grid grid-cols-2 gap-4 px-10">
+        <div className="md:grid md:grid-cols-2 md:gap-4 md:flex-row flex flex-col-reverse">
           <div className="col-span-1 flex justify-center place-items-center">
-            <div style={{ width: "80%" }}>
+            <div  className="w-4/5 z-10">
               <Image
                 src={link_organize_header}
                 alt="Add Links Externally"
@@ -200,8 +205,8 @@ function KeyFeatures() {
         </div>
       </FeatureSection>
 
-      <FeatureSection>
-        <div className="grid grid-cols-2 gap-4 px-2 mb-5">
+      <FeatureSection className="pb-11">
+        <div className="md:grid md:grid-cols-2 md:gap-4 md:flex-row flex flex-col">
           <div className="col-span-1 relative flex justify-center">
             <Bubble1 top="-10%" left="40%" />
             <Bubble2 top="70%" left="5%" />

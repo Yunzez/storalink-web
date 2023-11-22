@@ -1,10 +1,13 @@
 "use client";
 
-import React from "react";
-import styled from "styled-components";
+import React, { useEffect, useRef, useState } from "react";
+import styled, { keyframes } from "styled-components";
 import theme from "@/app/theme";
 import { useRouter } from "next/navigation";
+import { gsap } from "gsap";
 import Storalink_name from "../../public/Storalink_name.svg";
+import Menu_close from "../../public/Menu_close.svg";
+import Menu_open from "../../public/Menu_open.svg";
 import Image from "next/image";
 
 const NavbarContainer = styled.div`
@@ -44,6 +47,28 @@ export const ReserveButton = styled.div`
   }
 `;
 
+const DesktopMenu = styled.div`
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const MobileMenu = styled.div`
+  display: none;
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 100;
+    height: 8vh;
+    width: 100vw;
+    top: 0;
+    background-color: ${theme.themeWhite};
+    opacity: 0.9;
+  }
+`;
+
 const MenuOptions = styled.div`
   display: flex;
   justify-content: space-between;
@@ -61,7 +86,7 @@ const MenuOption = styled.div`
   padding: 0.5rem 0.5rem;
   transition: 0.3s ease-in-out;
   font-size: 1.2rem;
-  :hover {
+  &:hover {
     cursor: pointer;
     color: ${theme.themeYellow};
   }
@@ -69,20 +94,122 @@ const MenuOption = styled.div`
 
 function Navbar() {
   const router = useRouter();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [animate, setAnimate] = useState(false);
+
+  console.log(menuOpen, "initial load ");
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+
+    console.log("set menu to close");
+  };
+
+  const openMenu = () => {
+    if (!animate) {
+      setAnimate(true);
+    }
+
+    setMenuOpen(true);
+    console.log("set menu to open");
+  };
+
+  const SubMenuAnimationOpen = keyframes`
+  1% { height: 0vh; opacity: 0; border-top: 0px solid ${theme.themeGrey}}
+  80% { height: 8vh; opacity: 0.9; border-top: 1px solid ${theme.themeGrey}}
+    100% { height: 8vh; opacity: 1; border-top: 2px solid ${theme.themeGrey};  border-bottom: 2px solid ${theme.themeGrey}}
+    `;
+
+  const SubMenuAnimationClose = keyframes`
+    1% {height: 8vh; opacity: 0.9; border-top: 3px solid ${theme.themeGrey}}
+    100% {height: 0vh; opacity: 0; border-top: 0px solid ${theme.themeGrey}}
+    `;
+
+  const MobileSubMenu = styled.div`
+    display: relative;
+    height: 0vh;
+    opacity: 1;
+    top: 8vh;
+    @media (max-width: 768px) {
+      width: 100vw;
+      display: flex;
+      justify-content: space-between;
+      z-index: 100;
+      position: fixed;
+      background-color: ${theme.themeWhite};
+      border-top: 2px solid ${theme.themeGrey};
+      border-bottom: 2px solid ${theme.themeGrey};
+      animation-name: ${animate ? SubMenuAnimationClose : ""};
+      animation-duration: 0.5s;
+      opacity: 0;
+    }
+
+    &.subMenu-open {
+      position: fixed;
+      animation-name: ${SubMenuAnimationOpen};
+      background-color: ${theme.themeWhite};
+      animation-duration: 0.5s;
+      opacity: 1;
+      z-index: 100;
+      height: 8vh;
+      align-items: center;
+    }
+  `;
 
   return (
-    <NavbarContainer>
-      <MenuOptions>
-        <Image src={Storalink_name} alt="Storalink_name" />
-        <MenuOption onClick={() => router.push("/About")}>Product</MenuOption>
-        <MenuOption onClick={() => router.push("/About")}>About</MenuOption>
-        <MenuOption>Release</MenuOption>
-        <MenuOption>Pricing</MenuOption>
-      </MenuOptions>
-      <ReserveButton>
-        <p>reserve a spot</p>
-      </ReserveButton>
-    </NavbarContainer>
+    <>
+      <DesktopMenu>
+        <NavbarContainer>
+          <MenuOptions>
+            <Image src={Storalink_name} width={120} alt="Storalink_name" />
+            <MenuOption onClick={() => router.push("/")}>Product</MenuOption>
+            <MenuOption onClick={() => router.push("/About")}>About</MenuOption>
+            <MenuOption>Release</MenuOption>
+            <MenuOption>Pricing</MenuOption>
+          </MenuOptions>
+          <ReserveButton>
+            <p>reserve a spot</p>
+          </ReserveButton>
+        </NavbarContainer>
+      </DesktopMenu>
+      <MobileMenu>
+        <Image
+          className="ms-5"
+          src={Storalink_name}
+          width={150}
+          alt="Storalink_name"
+        />
+        <div
+          className="me-5"
+          style={{ position: "relative", width: "25px", height: "25px" }}
+        >
+          {menuOpen ? (
+            <div
+              style={{ opacity: 1, transition: "opacity 0.3s ease-out" }}
+              onClick={closeMenu}
+            >
+              <Image src={Menu_close} alt="Close menu" width={25} height={25} />
+            </div>
+          ) : (
+            <div
+              style={{ opacity: 1, transition: "opacity 0.3s ease-out" }}
+              onClick={openMenu}
+            >
+              <Image src={Menu_open} alt="Open menu" width={25} height={25} />
+            </div>
+          )}
+        </div>
+
+        <div style={{ position: "absolute", zIndex: 100 }}>
+          <MobileSubMenu className={`${menuOpen ? "subMenu-open" : ""}`}>
+            <MenuOption>Product</MenuOption>
+            <MenuOption>About</MenuOption>
+            <MenuOption>Releases</MenuOption>
+            <MenuOption>Pricing</MenuOption>
+          </MobileSubMenu>
+        </div>
+      </MobileMenu>
+    </>
   );
 }
 
