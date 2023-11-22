@@ -4,7 +4,6 @@ import React, { useEffect, useRef, useState } from "react";
 import styled, { keyframes } from "styled-components";
 import theme from "@/app/theme";
 import { useRouter } from "next/navigation";
-import { gsap } from "gsap";
 import Storalink_name from "../../public/Storalink_name.svg";
 import Menu_close from "../../public/menu_close.svg";
 import Menu_open from "../../public/menu_open.svg";
