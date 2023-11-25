@@ -166,7 +166,7 @@ function Navbar() {
             <MenuOption>Release</MenuOption>
             <MenuOption>Pricing</MenuOption>
           </MenuOptions>
-          <ReserveButton>
+          <ReserveButton onClick={() => router.push("/reserve")}>
             <p>reserve a spot</p>
           </ReserveButton>
         </NavbarContainer>
