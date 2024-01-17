@@ -5,7 +5,7 @@ import styled, { keyframes, css } from "styled-components";
 import theme from "../theme";
 import Image from "next/image";
 import add from "../../../public/add.svg";
-import minus from "../../../public/minus.svg";
+import minus from "../../../public/Minus.svg";
 import blockchain from "../../../public/blockchain.png";
 import team from "../../../public/team.png";
 const fadeInDown = keyframes`
