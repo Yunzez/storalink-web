@@ -5,6 +5,7 @@ import { styled } from "styled-components";
 import Image from "next/image";
 import reserve_1 from "../../../public/reserve_1.png";
 import reserve_2 from "../../../public/reserve_2.png";
+import reserve_visual from "../../../public/reserve_visual.png";
 import mailBox from "../../../public/mailbox.svg";
 const UserInputBox = styled.input`
   border: 2px solid ${theme.themeDarkGrey};
@@ -51,7 +52,7 @@ function About() {
   return (
     <div className="flex justify-between">
       <div className="md:w-2/5 min-h-screen">
-        <div className="text-sm">BE A BETA TESTER</div>
+        <div className="text-md mt-5">BE A BETA TESTER</div>
         <div
           className="text-4xl font-bold mt-5 mb-10"
           style={{ color: theme.themeYellow }}
@@ -121,29 +122,16 @@ function About() {
 
       <div className="w-full md:w-3/5 lg:absolute right-0 top-0 hidden sm:block">
         <Image
-          src={reserve_1}
+          src={reserve_visual}
           width={700}
           height={300}
           alt="reserve image one, a phone view"
           fill={false}
-          className="absolute right-0 top-[70px] right-[190px]"
+          className="absolute right-0 top-[170px] right-[190px]"
           style={{
             objectFit: "contain",
             transform: "translateX(0%) translateY(0%)",
             zIndex: 1,
-          }}
-        />
-
-        <Image
-          src={reserve_2}
-          width={500}
-          height={150}
-          alt="reserve image two"
-          fill={false}
-          className="absolute right-0 top-[430px]"
-          style={{
-            objectFit: "contain",
-            transform: "translateX(0%) translateY(0%)",
           }}
         />
       </div>

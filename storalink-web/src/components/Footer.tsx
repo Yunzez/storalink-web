@@ -5,11 +5,11 @@ import styled from "styled-components";
 import theme from "@/app/theme";
 import Storalink_name from "../../public/Storalink_name.svg";
 import Image from "next/image";
+import linkedin from "../../public/linkedin.svg";
 const FooterContainer = styled.div`
   width: 100%;
   height: 25vh;
   bottom: 0;
-
 `;
 
 const TopSection = styled.div`
@@ -40,15 +40,18 @@ const BottomLink = styled.p`
     cursor: pointer;
     color: ${theme.themeYellow};
   }
-  `
+`;
 function Footer() {
   return (
     <FooterContainer>
-      <TopSection>
+      {/* // ! Desktop version */}
+      <TopSection className="hidden lg:relative">
         <div className="grid grid-cols-6 gap-4 px-10">
           <div className="col-span-2 place-content-center px-5">
             <Image src={Storalink_name} alt="Storalink_name" />
-            <small style={{color: theme.themeGrey}}>Store, sort, and share an assortment of links in a smart way!</small>
+            <small style={{ color: theme.themeGrey }}>
+              Store, sort, and share an assortment of links in a smart way!
+            </small>
           </div>
           <div>
             <BottomHeader>Product</BottomHeader>
@@ -76,9 +79,54 @@ function Footer() {
           </div>
         </div>
       </TopSection>
+
+
+      {/* // ! Mobile version */}
+      <TopSection className="lg:hidden p-5">
+        <div className="flex justify-start">
+          <Image src={Storalink_name} alt="Storalink_name" />
+        </div>
+        <small style={{ color: theme.themeGrey}}>
+        Taking your hyperlink-sharing game to the next level.
+        </small>
+
+        <div className="grid grid-rows-2 grid-flow-col gap-4 mt-5">
+          <div>
+          <BottomHeader>Product</BottomHeader>
+        <BottomLink>Key Features</BottomLink>
+            <BottomLink>Pricing</BottomLink>
+            <BottomLink>Release</BottomLink>
+          </div>
+       
+          <div>
+            <BottomHeader>Company</BottomHeader>
+            <BottomLink>About</BottomLink>
+            <BottomLink>Job</BottomLink>
+            <BottomLink>Contact</BottomLink>
+          </div>
+
+          <div>
+            <BottomHeader>Legal</BottomHeader>
+            <BottomLink>Terms</BottomLink>
+            <BottomLink>Privacy</BottomLink>
+            <BottomLink>Cookies</BottomLink>
+          </div>
+        </div>
+      </TopSection>
+
+
       <BottomSection>
         <small>© 2023 Storalink. All rights reserved.</small>
-        <small>icons</small>
+        <Image
+          src={linkedin}
+          alt="linkedin"
+          width={25}
+          height={25}
+          onClick={() =>
+            window.open("https://www.linkedin.com/company/storalink/", "_blank")
+          }
+          className="cursor-pointer mb-3"
+        />
       </BottomSection>
     </FooterContainer>
   );

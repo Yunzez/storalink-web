@@ -95,6 +95,7 @@ function Navbar() {
   const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
   const [animate, setAnimate] = useState(false);
+  const [page, setPage] = useState("/");
 
   console.log(menuOpen, "initial load ");
 
@@ -161,10 +162,58 @@ function Navbar() {
         <NavbarContainer>
           <MenuOptions>
             <Image src={Storalink_name} width={120} alt="Storalink_name" />
-            <MenuOption onClick={() => router.push("/")}>Product</MenuOption>
-            <MenuOption onClick={() => router.push("/About")}>About</MenuOption>
-            <MenuOption>Release</MenuOption>
-            <MenuOption>Pricing</MenuOption>
+            <MenuOption
+              style={{
+                color: `${
+                  page == "/" ? theme.themeYellow : theme.themeDarkGrey
+                }`,
+              }}
+              onClick={() => {
+                router.push("/");
+                setPage("/");
+              }}
+            >
+              Product
+            </MenuOption>
+            <MenuOption
+              style={{
+                color: `${
+                  page == "/About" ? theme.themeYellow : theme.themeDarkGrey
+                }`,
+              }}
+              onClick={() => {
+                router.push("/About");
+                setPage("/About");
+              }}
+            >
+              About
+            </MenuOption>
+            <MenuOption
+              style={{
+                color: `${
+                  page == "/Release" ? theme.themeYellow : theme.themeDarkGrey
+                }`,
+              }}
+              onClick={() => {
+                router.push("/");
+                setPage("/Release");
+              }}
+            >
+              Release
+            </MenuOption>
+            <MenuOption
+              style={{
+                color: `${
+                  page == "/Pricing" ? theme.themeYellow : theme.themeDarkGrey
+                }`,
+              }}
+              onClick={() => {
+                router.push("/");
+                setPage("/Pricing");
+              }}
+            >
+              Pricing
+            </MenuOption>
           </MenuOptions>
           <ReserveButton onClick={() => router.push("/reserve")}>
             <p>reserve a spot</p>
