@@ -22,9 +22,9 @@ export const MainContentWrapper = styled.div`
 
 export default function Home() {
   return (
-    <>
+    <div style={{overflowX: "hidden"}}>
       <Banner />
       <KeyFeatures />
-    </>
+    </div>
   );
 }

@@ -57,6 +57,7 @@ const Bubble1 = styled.div<BubbleProps>`
   top: ${(props) => props.top};
   left: ${(props) => props.left};
   z-index: 1;
+  overflow: hidden;
 `;
 
 const Bubble2 = styled.div<BubbleProps>`
@@ -70,6 +71,7 @@ const Bubble2 = styled.div<BubbleProps>`
   top: ${(props) => props.top};
   left: ${(props) => props.left};
   z-index: 1;
+  overflow: hidden;
 `;
 
 function KeyFeatures() {
@@ -98,9 +100,9 @@ function KeyFeatures() {
                 src={link_external_header}
                 alt="Add Links Externally"
                 width={100}
-                fill={false}
+                height={100}
                 style={{
-                  objectFit: "contain",
+                  objectFit: "scale-down",
                   position: "relative",
                   zIndex: 1,
                 }}
@@ -225,11 +227,11 @@ function KeyFeatures() {
                 src={link_share_header}
                 alt="Add Links Externally"
                 width={100}
-                fill={false}
                 style={{
                   objectFit: "contain",
                   position: "relative",
                   zIndex: 1,
+                  imageRendering: "pixelated"
                 }}
               />
               <p className="text-xl font-bold">Share Folders</p>
