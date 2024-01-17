@@ -201,8 +201,8 @@ function Navbar() {
 
         <div style={{ position: "absolute", zIndex: 100 }}>
           <MobileSubMenu className={`${menuOpen ? "subMenu-open" : ""}`}>
-            <MenuOption>Product</MenuOption>
-            <MenuOption>About</MenuOption>
+            <MenuOption onClick={() => router.push("/")}>Product</MenuOption>
+            <MenuOption onClick={() => router.push("/About")}>About</MenuOption>
             <MenuOption>Releases</MenuOption>
             <MenuOption>Pricing</MenuOption>
           </MobileSubMenu>
