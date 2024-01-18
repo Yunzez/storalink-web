@@ -45,7 +45,7 @@ function Footer() {
   return (
     <FooterContainer>
       {/* // ! Desktop version */}
-      <TopSection className="hidden lg:relative">
+      <TopSection className=" md:relative">
         <div className="grid grid-cols-6 gap-4 px-10">
           <div className="col-span-2 place-content-center px-5">
             <Image src={Storalink_name} alt="Storalink_name" />
@@ -82,7 +82,7 @@ function Footer() {
 
 
       {/* // ! Mobile version */}
-      <TopSection className="lg:hidden p-5">
+      <TopSection className="md:hidden p-5">
         <div className="flex justify-start">
           <Image src={Storalink_name} alt="Storalink_name" />
         </div>

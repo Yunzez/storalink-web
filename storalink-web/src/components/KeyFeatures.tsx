@@ -10,6 +10,7 @@ import link_organize_header from "../../public/organize_header_icon.svg";
 import link_share from "../../public/link_share.png";
 import link_share_header from "../../public/share_header_icon.svg";
 import Image from "next/image";
+import { Sepeatetor } from "@/app/page";
 
 const FeatureDivHeight = 600;
 const FeatureSection = styled.div`
@@ -80,11 +81,14 @@ function KeyFeatures() {
       <div className="flex justify-center">
         <div className="md:w-3/5 w-screen px-5 md:px-0">
           <p className="font-semibold text-center mb-3">Key Features</p>
+          <div className="flex justify-center mb-3">
+            <Sepeatetor style={{width: "150px"}}/>
+            </div>
           <p className="font-bold text-xl text-center mb-3">
             Here is what you can do with your links!
           </p>
 
-          <p className="text-sm" style={{ color: theme.themeGrey }}>
+          <p className="text-sm text-center" style={{ color: theme.themeGrey }}>
             There are many links on the internet and that causes chaos when you
             want to locate specific items. Don’t let the chaos control you!
             Control the chaos!

@@ -8,6 +8,7 @@ import { GlobalContext } from "@/context/GlobalProvider";
 import Navbar from "@/components/Navbar";
 import Banner from "@/components/Banner";
 import KeyFeatures from "@/components/KeyFeatures";
+import UseCase from "@/components/UseCase";
 // import { MainContentWrapper } from "./layout";
 
 export const MainContentWrapper = styled.div`
@@ -20,10 +21,18 @@ export const MainContentWrapper = styled.div`
   }
 `;
 
+export const Sepeatetor = styled.span`
+display: block;
+min-height: 2px;
+background-color: ${theme.themeYellow};
+`;
+
+
 export default function Home() {
   return (
     <div style={{overflowX: "hidden"}}>
       <Banner />
+      <UseCase/>
       <KeyFeatures />
     </div>
   );
