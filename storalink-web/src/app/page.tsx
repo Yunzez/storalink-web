@@ -9,6 +9,7 @@ import Navbar from "@/components/Navbar";
 import Banner from "@/components/Banner";
 import KeyFeatures from "@/components/KeyFeatures";
 import UseCase from "@/components/UseCase";
+import Release from "@/components/Release";
 // import { MainContentWrapper } from "./layout";
 
 export const MainContentWrapper = styled.div`
@@ -34,6 +35,7 @@ export default function Home() {
       <Banner />
       <UseCase/>
       <KeyFeatures />
+      <Release/>
     </div>
   );
 }

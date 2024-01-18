@@ -45,7 +45,7 @@ function Footer() {
   return (
     <FooterContainer>
       {/* // ! Desktop version */}
-      <TopSection className=" md:relative">
+      <TopSection className="md:block hidden">
         <div className="grid grid-cols-6 gap-4 px-10">
           <div className="col-span-2 place-content-center px-5">
             <Image src={Storalink_name} alt="Storalink_name" />

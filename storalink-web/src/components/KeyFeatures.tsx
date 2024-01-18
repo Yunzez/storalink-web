@@ -84,7 +84,7 @@ function KeyFeatures() {
           <div className="flex justify-center mb-3">
             <Sepeatetor style={{width: "150px"}}/>
             </div>
-          <p className="font-bold text-xl text-center mb-3">
+          <p className="font-bold text-2xl text-center mb-3">
             Here is what you can do with your links!
           </p>
 
