@@ -41,14 +41,13 @@ function Banner() {
       </div>
       <div
         className="flex justify-center overflow-hidden relative"
-        style={{ height: "500px" }}
       >
         <Image
           src={Storalink_name}
           alt="Storalink_name"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="top"
+          fill={false}
+          height={800}
+          style={{ objectFit: "contain", position: "relative", zIndex: 1 }}
         />
       </div>
     </div>
