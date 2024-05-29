@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 
 const page = () => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [htmlContent, setHtmlContent] = useState(`
   <style>
   [data-custom-class='body'], [data-custom-class='body'] * {
