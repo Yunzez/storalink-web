@@ -6,6 +6,7 @@ import theme from "@/app/theme";
 import Storalink_name from "../../public/Storalink_name.svg";
 import Image from "next/image";
 import linkedin from "../../public/linkedin.svg";
+import { useRouter } from "next/navigation";
 const FooterContainer = styled.div`
   width: 100%;
   height: 25vh;
@@ -36,12 +37,14 @@ const BottomLink = styled.p`
   font-size: 1rem;
   font-weight: 500;
   margin-bottom: 0.5rem;
+  cursor: pointer;
   :hover {
-    cursor: pointer;
+    cursor: pointer !important;
     color: ${theme.themeYellow};
   }
 `;
 function Footer() {
+  const router = useRouter();
   return (
     <FooterContainer>
       {/* // ! Desktop version */}
@@ -74,7 +77,9 @@ function Footer() {
           <div>
             <BottomHeader>Legal</BottomHeader>
             <BottomLink>Terms</BottomLink>
-            <BottomLink>Privacy</BottomLink>
+            <BottomLink onClick={() => {
+                router.push("/Privacy");
+              }}>Privacy</BottomLink>
             <BottomLink>Cookies</BottomLink>
           </div>
         </div>
@@ -108,7 +113,9 @@ function Footer() {
           <div>
             <BottomHeader>Legal</BottomHeader>
             <BottomLink>Terms</BottomLink>
-            <BottomLink>Privacy</BottomLink>
+            <BottomLink onClick={() => {
+                router.push("/Privacy");
+              }}>Privacy</BottomLink>
             <BottomLink>Cookies</BottomLink>
           </div>
         </div>
