@@ -21,7 +21,7 @@ const Product = () => {
           <AppStoreButton url={APKUrl} theme={"dark"} className={"custom-style"} />
           <button onClick={openWebsite}>Learn More</button>
         </div>
-        <img width="80%" src={CoverImage} alt="Cover Image"></img>
+        <img width="80%" src={CoverImage} alt="cover"></img>
       </div>
       {/* <div className="homeCell useCase">
         <h1><mark>Why Use Storalink?</mark></h1>
