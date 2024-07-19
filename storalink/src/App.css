@@ -1,0 +1,379 @@
+/* Universal */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --header-height: 3.5rem;
+  --first-color: #FF9900;
+  --title-color: #212121;
+  --text-color: #212121;
+  --secondary-text-color: #767676;
+  --body-color: #FFFFFF;
+  --background-color: #F8F8F8;
+  --body-font: "Open Sans", sans-serif;
+  --h2-font-size: 1.25rem;
+  --small-font-size: 0.813rem;
+  --font-semi-bold: 600;
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+body {
+  background-color: var(--body-color);
+  color: var(--text-color);
+  font-family: var(--body-font);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main-content {
+  padding-top: 16vh;
+  padding-left: 2vh;
+  padding-right: 2vh;
+}
+
+mark {
+  background-color: #FFEBCD;
+  border-bottom: 2px solid var(--first-color);
+}
+
+/* Navbar.css */
+
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: white;
+  z-index: var(--z-fixed);
+  padding-left: 4vh;
+  padding-right: 4vh;
+}
+
+.logoGroup {
+  display: flex;
+  align-items: center;
+}
+
+.logoGroup img {
+  margin-right: 8px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  height: var(--header-height);
+  margin: 1rem;
+}
+
+.nav__logo {
+  color: var(--first-color);
+  transition: color 0.4s;
+  font-size: var(--h2-font-size);
+  font-family: var(--second-font);
+}
+
+.nav__toggle,
+.nav__close {
+  font-size: 1.5rem;
+  color: var(--title-color);
+  cursor: pointer;
+}
+
+.nav__cta {
+  background-color: var(--first-color);
+  color: var(--title-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  padding: 0.75rem 1.5rem;
+}
+
+.nav__cta__link {
+  color: var(--text-color);
+  font-weight: var(--font-semi-bold);
+  transition: color 0.4s;
+}
+
+@media screen and (max-width: 1150px) {
+  .nav__menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    background-color: hsla(0, 0%, 6%, 0.2);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    width: 80%;
+    height: 100%;
+    padding: 6rem 3rem 0;
+    transition: right 0.4s;
+  }
+}
+@media screen and (max-width: 300px) {
+  .nav__menu {
+    padding: 4rem 1rem 2rem;
+  }
+
+  .nav__list {
+    row-gap: 1rem;
+  }
+
+  .nav__link,
+  .nav__cta {
+    font-size: var(--smaller-font-size);
+  }
+
+  .nav__cta {
+    padding: 8px 16px;
+    font-size: 12px;
+    margin-top: 1rem;
+    width: auto;
+    white-space: nowrap;
+  }
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.5rem;
+}
+
+.nav__link {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+  transition: color 0.4s;
+}
+
+.nav__link:hover {
+  color: var(--first-color);
+}
+
+.nav__close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+}
+
+.show-menu {
+  right: 0;
+}
+.nav__listt {
+  display: flex;
+  flex-direction: row;
+  column-gap: 2.5rem;
+}
+
+.nav__menu_mobile {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  background-color: hsla(0, 0%, 6%, 0.2);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  width: 80%;
+  height: 100%;
+  padding: 6rem 3rem 0;
+  transition: right 0.4s;
+}
+@media screen and (min-width: 1150px) {
+  .nav {
+    height: calc(var(--header-height) + 1rem);
+  }
+  .nav__toggle,
+  .nav__close {
+    display: none;
+  }
+
+  .nav__list {
+    flex-direction: row;
+    column-gap: 2.5rem;
+  }
+}
+
+/* Footer */
+.footerContainer {
+  background-color: var(--background-color);
+  padding-left: 48px;
+  padding-right: 48px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.footerContainer div {
+  display: flex;
+  justify-content: space-between;
+}
+
+hr {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.copyright {
+  color: var(--secondary-text-color);
+}
+
+.legalSection {
+  display: flex;
+}
+
+.footerLink {
+  color: var(--secondary-text-color);
+  text-decoration: underline;
+}
+
+.footerLink:hover {
+  color: var(--first-color);
+}
+
+.dot {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.socialMediaIcons {
+  display: flex;
+  gap: 8px;
+}
+
+.footerLogo {
+  color: var(--first-color);
+  font-size: var(--h3-font-size);
+  font-family: var(--body-font);
+  font-weight: var(--font-semi-bold);
+}
+
+/* Contact */
+.contactCard {
+  background-color: var(--background-color);
+  border-radius: 12px;
+  padding-left: 48px;
+  padding-right: 48px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  text-align: center;
+  margin-bottom: 24px;
+  height: 48vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardContent {
+  width: 32vh;
+}
+
+.contactContainer {
+  text-align: center;
+  margin-top: 48px;
+}
+
+.contactContainer h1 {
+    margin-bottom: 24px;
+}
+
+.contactContainer h2 {
+  color: var(--text-color);
+}
+
+.contactContainer h3 {
+  color: var(--secondary-text-color);
+  font-weight: var(--default);
+}
+
+.contactCardContainer {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+@media (min-width: 992px) { 
+  .contactCardContainer {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+}
+
+/* Product */
+.homeCell {
+  background-color: var(--background-color);
+  border-radius: 12px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.introduction {
+  padding-top: 80px;
+  height: 700px;
+  overflow: hidden;
+}
+
+.titleContainer {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.introduction h1 {
+  font-size: 40px;
+  padding-bottom: 40px;
+}
+
+.coverButtonContainer {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  justify-content: center;
+  padding-bottom: 40px;
+}
+
+.coverButtonContainer button {
+  border-radius: 8px;
+  padding: 6px 32px;
+  font-size: 20px;
+  font-weight: var(--font-semi-bold);
+  border: 2px solid;
+  cursor: pointer;
+}
+
+.coverButtonContainer button:hover {
+  background-color: #212121;
+  transition: all 0.4s ease;
+  color: white;
+}
+
+@media (min-width: 992px) { 
+  .titleContainer {
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+  .introduction h1 {
+    font-size: 60px;
+  }
+  .homeCell {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+  .introduction {
+    height: 1250px;
+  }
+}
