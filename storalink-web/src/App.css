@@ -109,6 +109,12 @@ mark {
   transition: color 0.4s;
 }
 
+@media (min-width: 992px) { 
+  .nav__link:hover {
+    color: var(--first-color);
+  }
+}
+
 @media screen and (max-width: 1150px) {
   .nav__menu {
     position: fixed;
@@ -156,10 +162,6 @@ mark {
   color: var(--title-color);
   font-weight: var(--font-semi-bold);
   transition: color 0.4s;
-}
-
-.nav__link:hover {
-  color: var(--first-color);
 }
 
 .nav__close {
@@ -236,10 +238,6 @@ hr {
   text-decoration: underline;
 }
 
-.footerLink:hover {
-  color: var(--first-color);
-}
-
 .dot {
   padding-left: 4px;
   padding-right: 4px;
@@ -255,6 +253,13 @@ hr {
   font-size: var(--h3-font-size);
   font-family: var(--body-font);
   font-weight: var(--font-semi-bold);
+}
+
+
+@media (min-width: 992px) { 
+  .footerLink:hover {
+    color: var(--first-color);
+  }
 }
 
 /* Contact */
@@ -355,12 +360,6 @@ hr {
   cursor: pointer;
 }
 
-.coverButtonContainer button:hover {
-  background-color: #212121;
-  transition: all 0.4s ease;
-  color: white;
-}
-
 @media (min-width: 992px) { 
   .titleContainer {
     padding-left: 200px;
@@ -375,5 +374,10 @@ hr {
   }
   .introduction {
     height: 1250px;
+  }
+  .coverButtonContainer button:hover {
+    background-color: #212121;
+    transition: all 0.4s ease;
+    color: white;
   }
 }
