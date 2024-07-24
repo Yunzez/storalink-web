@@ -356,8 +356,10 @@ hr {
   padding: 6px 32px;
   font-size: 20px;
   font-weight: var(--font-semi-bold);
-  border: 2px solid;
+  border: 2px solid var(--text-color);
   cursor: pointer;
+  color: var(--text-color);
+  display: none;
 }
 
 @media (min-width: 992px) { 
@@ -379,5 +381,8 @@ hr {
     background-color: #212121;
     transition: all 0.4s ease;
     color: white;
+  }
+  .coverButtonContainer button {
+    display: block;
   }
 }

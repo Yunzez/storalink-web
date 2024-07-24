@@ -21,7 +21,7 @@ const Footer = () => {
         </div>
         <hr/>
         <div>
-            <p className="copyright">© 2024 Storalink. All rights reserved.</p>
+            <p className="copyright">© 2024 Storalink</p>
             <div className="legalSection">
                 <a href="./PrivacyPolicyForApp.html" target="_blank" className="footerLink"><p>Privacy</p></a>
                 <p className="dot">·</p>
